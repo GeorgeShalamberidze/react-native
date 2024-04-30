@@ -1,10 +1,23 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
+import ListItem from "./src/components/listItem";
+import * as SplashScreen from "expo-splash-screen";
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  const days = [...Array(24)].map((_, idx) => idx + 1);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <FlatList
+        numColumns={2}
+        data={days}
+        contentContainerStyle={styles.content}
+        columnWrapperStyle={styles.content}
+        renderItem={({ item }) => <ListItem item={item} />}
+      />
+
       <StatusBar style="auto" />
     </View>
   );
@@ -12,9 +25,10 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+  },
+  content: {
+    gap: 15,
   },
 });
