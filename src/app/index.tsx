@@ -1,11 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { FlatList, StyleSheet, View } from "react-native";
-import ListItem from "./src/components/listItem";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
+import ListItem from "../components/listItem";
 
 SplashScreen.preventAutoHideAsync();
 
-export default function App() {
+export default function Home() {
   const days = [...Array(24)].map((_, idx) => idx + 1);
 
   return (
@@ -15,9 +15,9 @@ export default function App() {
         data={days}
         contentContainerStyle={styles.content}
         columnWrapperStyle={styles.content}
-        renderItem={({ item }) => <ListItem item={item} />}
+        renderItem={({ item }) => <ListItem day={item} />}
       />
-
+      <Text>qweqwe</Text>
       <StatusBar style="auto" />
     </View>
   );

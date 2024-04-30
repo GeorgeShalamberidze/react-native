@@ -1,15 +1,18 @@
+import { Link } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 type listItemType = {
-  item: number;
+  day: number;
 };
 
-const ListItem = ({ item }: listItemType) => {
+const ListItem = ({ day }: listItemType) => {
   return (
-    <View style={styles.checkbox}>
-      <Text style={styles.text}>{item}</Text>
-    </View>
+    <Link style={styles.user} href={`/day${day}`}>
+      <View style={styles.checkbox}>
+        <Text style={styles.text}>{day}</Text>
+      </View>
+    </Link>
   );
 };
 
@@ -29,6 +32,9 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontSize: 25,
+  },
+  user: {
+    color: "white",
   },
 });
 
