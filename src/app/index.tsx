@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
-import ListItem from "../components/listItem";
+import ListItem from "@/components/listItem";
 
 SplashScreen.preventAutoHideAsync();
 
