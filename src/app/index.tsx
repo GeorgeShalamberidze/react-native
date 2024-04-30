@@ -7,7 +7,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function Home() {
   const days = [...Array(24)].map((_, idx) => idx + 1);
-
+  console.log();
   return (
     <View style={styles.container}>
       <FlatList
