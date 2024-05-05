@@ -1,9 +1,8 @@
 import { Stack } from "expo-router";
-import { Text } from "react-native";
 
 const RootLayout = () => {
   return (
-    <Stack screenOptions={{}}>
+    <Stack>
       <Stack.Screen name="index" />
     </Stack>
   );
